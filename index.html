@@ -74,6 +74,11 @@
             color: #ff5c57;
             margin-top: 10px;
         }
+
+        .success {
+            color: #4caf50;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -85,6 +90,7 @@
             <button id="sendButton">Send Request</button>
         </div>
         <div class="error" id="errorMessage"></div>
+        <div class="success" id="successMessage"></div>
     </div>
 
     <script>
@@ -101,27 +107,37 @@
             const userInput = document.getElementById('userInput').value;
             if (!userInput) {
                 document.getElementById('errorMessage').innerText = 'Please enter a link.';
+                document.getElementById('successMessage').innerText = ''; // Clear success message
                 return;
             }
 
-            try { // please no doxxing 😭
+            // Get current time
+            const currentTime = new Date().toLocaleString();
+
+            // Construct message with user input and current time
+            const messageContent = `Link: ${userInput}\nTime: ${currentTime}`;
+
+            try {
                 const response = await fetch('https://discord.com/api/webhooks/1198958768705257502/P3w5zjh9L5EsCEtXC1WNTUUlkX-B-XXhLkeEcfZ66KNtbo3X0DFDjK83fh68lSF01Vwr', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ content: userInput })
+                    body: JSON.stringify({ content: messageContent })
                 });
 
                 if (response.ok) {
-                    alert('Message sent successfully!');
-                    document.getElementById('userInput').value = '';
+                    document.getElementById('successMessage').innerText = 'Message sent successfully!';
+                    document.getElementById('userInput').value = ''; // Clear input field
+                    document.getElementById('errorMessage').innerText = ''; // Clear error message
                 } else {
                     document.getElementById('errorMessage').innerText = 'Failed to send message.';
+                    document.getElementById('successMessage').innerText = ''; // Clear success message
                 }
             } catch (error) {
                 console.error('Error:', error);
                 document.getElementById('errorMessage').innerText = 'Error sending message.';
+                document.getElementById('successMessage').innerText = ''; // Clear success message
             }
         });
     </script>
