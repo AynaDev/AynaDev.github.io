@@ -1,4 +1,4 @@
 getgenv().Configuration = {
-    AllowObtainGhoul = true,
-    AllowSolveMiragePuzzle = false
+    ["Allow Obtain Ghoul"] = true,
+    ["Allow Solve Mirage Puzzle"] = false
 }
