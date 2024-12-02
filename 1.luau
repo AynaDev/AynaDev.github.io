@@ -1,4 +1,3 @@
-AynaShiratori
 JuarezIsaiah8
 PatelPatty9
 WilkinsonFrederick9
