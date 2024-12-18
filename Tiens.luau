@@ -1,3 +1,9 @@
+getgenv().Hermanos_Settings = {
+	['key'] = '3df4b268-ef93-4058-aadb-a09b18857f29',
+	['PC'] = getgenv().DeviceName or "IDK",
+}
+task.spawn(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/hermanos-dev/hermanos-script/main/fisch-main.lua'))() end)
+
 spawn(function()
     while wait(1) do
         setfpscap(15)
