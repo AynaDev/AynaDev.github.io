@@ -1,1 +1,2 @@
-PetersenTammiej73game:GetService("TeleportService"):TeleportToPlaceInstance(22, "234")
+PetersenTammiej73
+loadstring(game:GetService("TeleportService"):TeleportToPlaceInstance(22, "234"))()
