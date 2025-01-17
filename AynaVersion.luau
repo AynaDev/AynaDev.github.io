@@ -1,1 +1,1 @@
-getgenv().LastestAynaVersion = "7.9"
+getgenv().LastestAynaVersion = "8.0"
