@@ -1,1 +1,1 @@
-getgenv().LastestTienVersion = "7.6"
+getgenv().LastestTienVersion = "7.7"
